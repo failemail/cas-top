@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Запрещаем технические страницы
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /checkout/
+
+# Sitemap
+Sitemap: https://cas-top.ru/sitemap.xml
+
+# Подсказка для Googlebot
+User-agent: Googlebot
+Disallow: /private/
