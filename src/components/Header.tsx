@@ -14,6 +14,7 @@ const Header: React.FC = () => {
 
   return (
     <header className="relative z-50 bg-slate-900/80 backdrop-blur-md border-b border-purple-500/20">
+      <meta name="google-site-verification" content="em-VnjMpoWXVwPobcBWFk2yWcyQkxGzY_P1gLM3PoX0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
