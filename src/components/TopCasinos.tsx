@@ -15,6 +15,10 @@ const TopCasinos: React.FC = () => {
     return icons[crypto] || crypto;
   };
 
+  const handleCasinoClick = (link: string) => {
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="casinos" className="py-20 bg-slate-900 relative overflow-hidden">
       {/* Background Pattern */}
@@ -124,7 +128,10 @@ const TopCasinos: React.FC = () => {
                 </div>
 
                 {/* Enhanced Action Button */}
-                <button className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button flex items-center justify-center space-x-2 group hover:scale-105 transform">
+                <button 
+                  onClick={() => handleCasinoClick(casino.link)}
+                  className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button flex items-center justify-center space-x-2 group hover:scale-105 transform"
+                >
                   <TrendingUp className="w-5 h-5 group-hover:scale-110 transition-transform group-hover:rotate-12" />
                   <span>Играть</span>
                   <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

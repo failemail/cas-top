@@ -12,12 +12,27 @@ const Header: React.FC = () => {
     { label: 'FAQ', href: '#faq' }
   ];
 
+  const handleNavClick = (href: string) => {
+    const element = document.getElementById(href.substring(1));
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleLoginClick = () => {
+    const casinosSection = document.getElementById('casinos');
+    if (casinosSection) {
+      casinosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="relative z-50 bg-slate-900/80 backdrop-blur-md border-b border-purple-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="relative">
               <Zap className="w-8 h-8 text-cyan-400" />
               <div className="absolute inset-0 w-8 h-8 text-cyan-400 animate-pulse"></div>
@@ -30,20 +45,23 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              <a
+              <button
                 key={item.label}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 relative group"
               >
                 {item.label}
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* Login Button */}
-          <button className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button">
-            Вход
+          <button 
+            onClick={handleLoginClick}
+            className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button"
+          >
+            Играть
           </button>
 
           {/* Mobile Menu Button */}
@@ -60,17 +78,19 @@ const Header: React.FC = () => {
           <div className="md:hidden py-4 border-t border-purple-500/20">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                <a
+                <button
                   key={item.label}
-                  href={item.href}
-                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-left"
                 >
                   {item.label}
-                </a>
+                </button>
               ))}
-              <button className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button w-fit">
-                Вход
+              <button 
+                onClick={handleLoginClick}
+                className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button w-fit"
+              >
+                Играть
               </button>
             </div>
           </div>

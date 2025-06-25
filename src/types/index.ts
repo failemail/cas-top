@@ -6,6 +6,7 @@ export interface Casino {
   rating: number;
   features: string[];
   cryptoSupport: string[];
+  link: string;
 }
 
 export interface Review {

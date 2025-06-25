@@ -2,6 +2,17 @@ import React from 'react';
 import { Sparkles, TrendingUp, Play } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const handlePlayClick = () => {
+    const casinosSection = document.getElementById('casinos');
+    if (casinosSection) {
+      casinosSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleDemoClick = () => {
+    window.open('https://demo.casino-games.com', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 overflow-hidden">
       {/* Animated Background Grid */}
@@ -47,12 +58,18 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-600">
-            <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button flex items-center space-x-2 hover:scale-105 transform">
+            <button 
+              onClick={handlePlayClick}
+              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button flex items-center space-x-2 hover:scale-105 transform"
+            >
               <TrendingUp className="w-5 h-5 group-hover:scale-110 transition-transform group-hover:rotate-12" />
               <span>Выбрать казино</span>
             </button>
             
-            <button className="group px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 rounded-xl font-medium text-lg hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 flex items-center space-x-2 hover:scale-105 transform">
+            <button 
+              onClick={handleDemoClick}
+              className="group px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 rounded-xl font-medium text-lg hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 flex items-center space-x-2 hover:scale-105 transform"
+            >
               <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
               <span>Демо режим</span>
             </button>
@@ -104,7 +121,10 @@ const Hero: React.FC = () => {
                     <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold animate-pulse animation-delay-600 hover:scale-110 transition-transform cursor-pointer">T</div>
                   </div>
                   
-                  <button className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform">
+                  <button 
+                    onClick={handlePlayClick}
+                    className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform"
+                  >
                     Играть сейчас
                   </button>
                 </div>
