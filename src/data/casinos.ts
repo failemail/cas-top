@@ -4,7 +4,7 @@ export const topCasinos: Casino[] = [
   {
     id: '1',
     name: 'Monro',
-    logo: '🎰',
+    logo: '/monro.png',
     bonus: '100% до 300 USDT',
     rating: 4.8,
     features: ['Без верификации', 'Быстрые выплаты', 'Web3 кошельки'],
@@ -14,7 +14,7 @@ export const topCasinos: Casino[] = [
   {
     id: '2',
     name: 'IRWIN',
-    logo: '🎲',
+    logo: '/irwin.png',
     bonus: '150% до 1000 USDT',
     rating: 4.7,
     features: ['Telegram бот', 'Lightning Network', 'Русская поддержка'],
@@ -24,7 +24,7 @@ export const topCasinos: Casino[] = [
   {
     id: '3',
     name: 'FLAGMAN',
-    logo: '🏴‍☠️',
+    logo: '/flagman.png',
     bonus: '200% до 750 USDT',
     rating: 4.6,
     features: ['Мгновенные выплаты', 'Анонимная игра', 'Mobile App'],

@@ -19,6 +19,25 @@ const TopCasinos: React.FC = () => {
     window.open(link, '_blank', 'noopener,noreferrer');
   };
 
+  const renderLogo = (casino: any) => {
+    // Check if logo is an image path or emoji
+    if (casino.logo.startsWith('/')) {
+      return (
+        <img 
+          src={casino.logo} 
+          alt={`${casino.name} logo`}
+          className="w-16 h-16 object-contain rounded-2xl animate-pulse-slow group-hover:animate-bounce"
+        />
+      );
+    } else {
+      return (
+        <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl animate-pulse-slow group-hover:animate-bounce">
+          {casino.logo}
+        </div>
+      );
+    }
+  };
+
   return (
     <section id="casinos" className="py-20 bg-slate-900 relative overflow-hidden">
       {/* Background Pattern */}
@@ -68,9 +87,7 @@ const TopCasinos: React.FC = () => {
               <div className="relative p-6 space-y-6">
                 {/* Header */}
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl flex items-center justify-center text-3xl animate-pulse-slow group-hover:animate-bounce">
-                    {casino.logo}
-                  </div>
+                  {renderLogo(casino)}
                   <div>
                     <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">{casino.name}</h3>
                     <div className="flex items-center space-x-1">
