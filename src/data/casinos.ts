@@ -9,7 +9,7 @@ export const topCasinos: Casino[] = [
     rating: 4.8,
     features: ['Без верификации', 'Быстрые выплаты', 'Web3 кошельки'],
     cryptoSupport: ['BTC', 'USDT', 'TON', 'ETH'],
-    link: 'https://monro.casino/?ref=casino-review'
+    link: 'http://megaways2.com/c9d8bff37'
   },
   {
     id: '2',
@@ -19,7 +19,7 @@ export const topCasinos: Casino[] = [
     rating: 4.7,
     features: ['Telegram бот', 'Lightning Network', 'Русская поддержка'],
     cryptoSupport: ['BTC', 'USDT', 'TON'],
-    link: 'https://irwin.casino/?ref=casino-review'
+    link: 'http://megaways2.com/c545e526a'
   },
   {
     id: '3',
@@ -29,37 +29,7 @@ export const topCasinos: Casino[] = [
     rating: 4.6,
     features: ['Мгновенные выплаты', 'Анонимная игра', 'Mobile App'],
     cryptoSupport: ['USDT', 'BTC', 'DOGE', 'LTC'],
-    link: 'https://flagman.casino/?ref=casino-review'
-  },
-  {
-    id: '4',
-    name: 'RIOBET',
-    logo: '🎯',
-    bonus: '125% до 500 USDT',
-    rating: 4.5,
-    features: ['Живые дилеры', 'Спортивные ставки', 'VIP программа'],
-    cryptoSupport: ['BTC', 'USDT', 'ETH', 'LTC'],
-    link: 'https://riobet.casino/?ref=casino-review'
-  },
-  {
-    id: '5',
-    name: 'STAKE',
-    logo: '💎',
-    bonus: '200% до 1000 USDT',
-    rating: 4.9,
-    features: ['Провабли честные игры', 'Стриминг', 'Турниры'],
-    cryptoSupport: ['BTC', 'USDT', 'ETH', 'DOGE', 'LTC'],
-    link: 'https://stake.com/?ref=casino-review'
-  },
-  {
-    id: '6',
-    name: 'BC.GAME',
-    logo: '🚀',
-    bonus: '300% до 20000 USDT',
-    rating: 4.4,
-    features: ['NFT интеграция', 'Метавселенная', 'Социальные функции'],
-    cryptoSupport: ['BTC', 'USDT', 'TON', 'ETH', 'DOGE'],
-    link: 'https://bc.game/?ref=casino-review'
+    link: 'http://megaways2.com/c9d8bff37'
   }
 ];
 
