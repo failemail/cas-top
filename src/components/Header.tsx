@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, X, Zap } from 'lucide-react';
+import { Menu, X, Zap, BookOpen } from 'lucide-react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onArticlesClick?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onArticlesClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
@@ -25,6 +29,13 @@ const Header: React.FC = () => {
     if (casinosSection) {
       casinosSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleArticlesClick = () => {
+    if (onArticlesClick) {
+      onArticlesClick();
+    }
+    setIsMenuOpen(false);
   };
 
   return (
@@ -54,6 +65,14 @@ const Header: React.FC = () => {
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
               </button>
             ))}
+            <button
+              onClick={handleArticlesClick}
+              className="flex items-center space-x-1 text-gray-300 hover:text-cyan-400 transition-colors duration-300 relative group"
+            >
+              <BookOpen className="w-4 h-4" />
+              <span>Статьи</span>
+              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
+            </button>
           </nav>
 
           {/* Login Button */}
@@ -86,6 +105,13 @@ const Header: React.FC = () => {
                   {item.label}
                 </button>
               ))}
+              <button
+                onClick={handleArticlesClick}
+                className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-left"
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>Статьи</span>
+              </button>
               <button 
                 onClick={handleLoginClick}
                 className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button w-fit"
