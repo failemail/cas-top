@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, TrendingUp, Zap, ExternalLink, BookOpen } from 'lucide-react';
 
 interface NewsItem {
@@ -11,11 +12,7 @@ interface NewsItem {
   image: string;
 }
 
-interface NewsSectionProps {
-  onArticlesClick?: () => void;
-}
-
-const NewsSection: React.FC<NewsSectionProps> = ({ onArticlesClick }) => {
+const NewsSection: React.FC = () => {
   const news: NewsItem[] = [
     {
       id: '1',
@@ -140,13 +137,13 @@ const NewsSection: React.FC<NewsSectionProps> = ({ onArticlesClick }) => {
 
         {/* Load More Button */}
         <div className="text-center mt-12 space-y-4">
-          <button 
-            onClick={onArticlesClick}
-            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform flex items-center space-x-2 mx-auto"
+          <Link 
+            to="/articles"
+            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform flex items-center space-x-2 mx-auto w-fit"
           >
             <BookOpen className="w-5 h-5" />
             <span>Все статьи о Web3 казино</span>
-          </button>
+          </Link>
           <p className="text-gray-400 text-sm">
             Экспертные материалы, обзоры и аналитика
           </p>
