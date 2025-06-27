@@ -56,6 +56,14 @@ const Header: React.FC = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <Link
+              to="/articles"
+              className="flex items-center space-x-1 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105 transform"
+            >
+              <BookOpen className="w-4 h-4" />
+              <span className="font-medium">Статьи</span>
+            </Link>
+            
             {navigation.map((item) => (
               <button
                 key={item.label}
@@ -66,14 +74,6 @@ const Header: React.FC = () => {
                 <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
               </button>
             ))}
-            <Link
-              to="/articles"
-              className="flex items-center space-x-1 text-gray-300 hover:text-cyan-400 transition-colors duration-300 relative group"
-            >
-              <BookOpen className="w-4 h-4" />
-              <span>Статьи</span>
-              <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></div>
-            </Link>
           </nav>
 
           {/* Login Button */}
@@ -97,6 +97,15 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-purple-500/20">
             <div className="flex flex-col space-y-4">
+              <Link
+                to="/articles"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-lg border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 w-fit"
+              >
+                <BookOpen className="w-4 h-4" />
+                <span className="font-medium">Статьи</span>
+              </Link>
+              
               {navigation.map((item) => (
                 <button
                   key={item.label}
@@ -106,14 +115,7 @@ const Header: React.FC = () => {
                   {item.label}
                 </button>
               ))}
-              <Link
-                to="/articles"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-left"
-              >
-                <BookOpen className="w-4 h-4" />
-                <span>Статьи</span>
-              </Link>
+              
               <button 
                 onClick={handleLoginClick}
                 className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button w-fit"
