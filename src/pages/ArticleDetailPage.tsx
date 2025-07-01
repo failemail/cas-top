@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { Calendar, Clock, User, ArrowLeft, Tag, TrendingUp, Shield, Zap } from 'lucide-react';
+import { Calendar, Clock, User, ArrowLeft, Tag, TrendingUp, Shield, Zap, Cpu, Smartphone, DollarSign } from 'lucide-react';
 import { articles } from '../data/articles';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -22,6 +22,12 @@ const ArticleDetailPage: React.FC = () => {
         return <TrendingUp className="w-4 h-4" />;
       case 'Безопасность':
         return <Shield className="w-4 h-4" />;
+      case 'Инновации':
+        return <Cpu className="w-4 h-4" />;
+      case 'DeFi':
+        return <DollarSign className="w-4 h-4" />;
+      case 'Мобильные':
+        return <Smartphone className="w-4 h-4" />;
       default:
         return <Tag className="w-4 h-4" />;
     }
@@ -73,7 +79,7 @@ const ArticleDetailPage: React.FC = () => {
           {/* Back Button */}
           <Link
             to="/articles"
-            className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 mb-8"
+            className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 mb-8 animate-slide-up"
           >
             <ArrowLeft className="w-5 h-5" />
             <span>Назад к статьям</span>
@@ -81,7 +87,7 @@ const ArticleDetailPage: React.FC = () => {
 
           {/* Article Header */}
           <article className="mb-8">
-            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-6">
+            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-6 animate-slide-up animation-delay-300">
               <img
                 src={article.image}
                 alt={article.title}
@@ -95,7 +101,7 @@ const ArticleDetailPage: React.FC = () => {
               </div>
             </div>
 
-            <header className="mb-8">
+            <header className="mb-8 animate-slide-up animation-delay-500">
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 {article.title}
               </h1>
@@ -119,7 +125,7 @@ const ArticleDetailPage: React.FC = () => {
                 {article.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-slate-700/50 rounded-lg text-sm text-gray-300 border border-gray-600/50"
+                    className="px-3 py-1 bg-slate-700/50 rounded-lg text-sm text-gray-300 border border-gray-600/50 hover:border-cyan-400/50 transition-colors duration-300"
                   >
                     #{tag}
                   </span>
@@ -132,7 +138,7 @@ const ArticleDetailPage: React.FC = () => {
             </header>
 
             {/* Article Content */}
-            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl border border-purple-500/20 p-8 mb-12">
+            <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl border border-purple-500/20 p-8 mb-12 animate-slide-up animation-delay-600">
               <div 
                 className="prose prose-lg max-w-none text-gray-300 prose-headings:text-white prose-headings:font-bold prose-h3:text-xl prose-h3:text-cyan-400 prose-strong:text-white prose-ul:text-gray-300 prose-li:text-gray-300 prose-p:leading-relaxed prose-p:mb-4"
                 dangerouslySetInnerHTML={{ __html: article.content }}
@@ -142,14 +148,15 @@ const ArticleDetailPage: React.FC = () => {
 
           {/* Related Articles */}
           {relatedArticles.length > 0 && (
-            <section className="mb-12">
+            <section className="mb-12 animate-slide-up animation-delay-900">
               <h2 className="text-2xl font-bold text-white mb-6">Похожие статьи</h2>
               <div className="grid md:grid-cols-3 gap-6">
-                {relatedArticles.map((relatedArticle) => (
+                {relatedArticles.map((relatedArticle, index) => (
                   <Link
                     key={relatedArticle.id}
                     to={`/articles/${relatedArticle.slug}`}
-                    className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl border border-purple-500/20 hover:border-cyan-400/50 transition-all duration-300 overflow-hidden hover:transform hover:scale-105"
+                    className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-xl border border-purple-500/20 hover:border-cyan-400/50 transition-all duration-300 overflow-hidden hover:transform hover:scale-105 animate-slide-up"
+                    style={{ animationDelay: `${1000 + index * 200}ms` }}
                   >
                     <div className="relative h-32 overflow-hidden">
                       <img
@@ -175,7 +182,7 @@ const ArticleDetailPage: React.FC = () => {
           )}
 
           {/* CTA */}
-          <div className="text-center">
+          <div className="text-center animate-slide-up animation-delay-1000">
             <Link
               to="/articles"
               className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform"

@@ -28,7 +28,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   section,
   tags = []
 }) => {
-  const currentUrl = `${url}${window.location.pathname}`;
+  const currentUrl = typeof window !== 'undefined' ? `${url}${window.location.pathname}` : url;
   const fullImageUrl = image.startsWith('http') ? image : `${url}${image}`;
 
   return (

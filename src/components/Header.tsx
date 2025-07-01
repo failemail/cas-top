@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap, BookOpen } from 'lucide-react';
+import { Menu, X, Zap, BookOpen, Newspaper } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +10,6 @@ const Header: React.FC = () => {
     { label: 'Казино', href: '/#casinos' },
     { label: 'Бонусы', href: '/#bonuses' },
     { label: 'Отзывы', href: '/#reviews' },
-    { label: 'Новости', href: '/#news' },
     { label: 'FAQ', href: '/#faq' }
   ];
 
@@ -23,6 +22,18 @@ const Header: React.FC = () => {
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
+      }
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleNewsClick = () => {
+    if (location.pathname !== '/') {
+      window.location.href = '/#news';
+    } else {
+      const newsSection = document.getElementById('news');
+      if (newsSection) {
+        newsSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
     setIsMenuOpen(false);
@@ -55,10 +66,20 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
+            {/* News Button - Prominent Position */}
+            <button
+              onClick={handleNewsClick}
+              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-full border border-orange-400/30 backdrop-blur-sm text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-105 transform animate-pulse"
+            >
+              <Newspaper className="w-4 h-4" />
+              <span className="font-medium">Новости</span>
+            </button>
+
+            {/* Articles Button */}
             <Link
               to="/articles"
-              className="flex items-center space-x-1 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105 transform"
+              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105 transform"
             >
               <BookOpen className="w-4 h-4" />
               <span className="font-medium">Статьи</span>
@@ -97,6 +118,16 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-purple-500/20">
             <div className="flex flex-col space-y-4">
+              {/* Mobile News Button */}
+              <button
+                onClick={handleNewsClick}
+                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-lg border border-orange-400/30 backdrop-blur-sm text-orange-400 hover:text-orange-300 transition-all duration-300 w-fit"
+              >
+                <Newspaper className="w-4 h-4" />
+                <span className="font-medium">Новости</span>
+              </button>
+
+              {/* Mobile Articles Button */}
               <Link
                 to="/articles"
                 onClick={() => setIsMenuOpen(false)}

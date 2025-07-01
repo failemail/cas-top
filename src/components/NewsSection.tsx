@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, TrendingUp, Zap, ExternalLink, BookOpen } from 'lucide-react';
+import { Calendar, TrendingUp, Zap, ExternalLink, BookOpen, Cpu, Smartphone } from 'lucide-react';
 
 interface NewsItem {
   id: string;
@@ -10,36 +10,40 @@ interface NewsItem {
   category: string;
   readTime: string;
   image: string;
+  slug: string;
 }
 
 const NewsSection: React.FC = () => {
   const news: NewsItem[] = [
     {
       id: '1',
-      title: 'Web3 казино набирают популярность в 2025 году',
-      excerpt: 'Децентрализованные игровые платформы показывают рекордный рост пользователей благодаря прозрачности и анонимности.',
-      date: '15 января 2025',
-      category: 'Тренды',
-      readTime: '3 мин',
-      image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg'
+      title: 'ИИ в казино: персонализация игрового опыта',
+      excerpt: 'Искусственный интеллект революционизирует онлайн-казино, создавая уникальный опыт для каждого игрока.',
+      date: '18 января 2025',
+      category: 'Технологии',
+      readTime: '7 мин',
+      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg',
+      slug: 'ai-powered-casino-games-2025'
     },
     {
       id: '2',
-      title: 'Новые бонусы без депозита в январе',
-      excerpt: 'Обзор лучших предложений месяца: до 500 USDT бесплатно для новых пользователей.',
-      date: '12 января 2025',
-      category: 'Бонусы',
-      readTime: '5 мин',
-      image: 'https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg'
+      title: 'Казино в метавселенной: будущее уже здесь',
+      excerpt: 'Виртуальная реальность открывает новые горизонты для онлайн-казино. Погружение в цифровые миры игр.',
+      date: '16 января 2025',
+      category: 'Инновации',
+      readTime: '8 мин',
+      image: 'https://images.pexels.com/photos/8728382/pexels-photo-8728382.jpeg',
+      slug: 'metaverse-casino-virtual-reality'
     },
     {
       id: '3',
-      title: 'TON интеграция в игровых платформах',
-      excerpt: 'Telegram Open Network становится популярным способом оплаты в криптоказино.',
-      date: '10 января 2025',
-      category: 'Технологии',
-      readTime: '4 мин',
-      image: 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg'
+      title: 'Web3 казино: революция в онлайн-гейминге',
+      excerpt: 'Блокчейн-технологии меняют индустрию азартных игр, предлагая прозрачность и децентрализацию.',
+      date: '15 января 2025',
+      category: 'Тренды',
+      readTime: '8 мин',
+      image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg',
+      slug: 'web3-casino-revolution'
     }
   ];
 
@@ -47,10 +51,12 @@ const NewsSection: React.FC = () => {
     switch (category) {
       case 'Тренды':
         return <TrendingUp className="w-4 h-4" />;
-      case 'Бонусы':
-        return <Zap className="w-4 h-4" />;
       case 'Технологии':
-        return <Calendar className="w-4 h-4" />;
+        return <Zap className="w-4 h-4" />;
+      case 'Инновации':
+        return <Cpu className="w-4 h-4" />;
+      case 'Мобильные':
+        return <Smartphone className="w-4 h-4" />;
       default:
         return <Calendar className="w-4 h-4" />;
     }
@@ -59,11 +65,13 @@ const NewsSection: React.FC = () => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'Тренды':
-        return 'text-purple-400 bg-purple-400/20 border-purple-400/30';
-      case 'Бонусы':
         return 'text-cyan-400 bg-cyan-400/20 border-cyan-400/30';
       case 'Технологии':
+        return 'text-purple-400 bg-purple-400/20 border-purple-400/30';
+      case 'Инновации':
         return 'text-blue-400 bg-blue-400/20 border-blue-400/30';
+      case 'Мобильные':
+        return 'text-pink-400 bg-pink-400/20 border-pink-400/30';
       default:
         return 'text-gray-400 bg-gray-400/20 border-gray-400/30';
     }
@@ -73,9 +81,9 @@ const NewsSection: React.FC = () => {
     <section id="news" className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm mb-6">
-            <Calendar className="w-4 h-4 text-cyan-400 mr-2 animate-pulse" />
-            <span className="text-cyan-400 text-sm font-medium">Свежие новости</span>
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-full border border-orange-400/30 backdrop-blur-sm mb-6 animate-pulse">
+            <Calendar className="w-4 h-4 text-orange-400 mr-2" />
+            <span className="text-orange-400 text-sm font-medium">Свежие новости</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -90,9 +98,10 @@ const NewsSection: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {news.map((item, index) => (
-            <article
+            <Link
               key={item.id}
-              className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl border border-purple-500/20 hover:border-cyan-400/50 transition-all duration-500 overflow-hidden hover:transform hover:scale-105 animate-slide-up"
+              to={`/articles/${item.slug}`}
+              className="group bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-2xl border border-purple-500/20 hover:border-cyan-400/50 transition-all duration-500 overflow-hidden hover:transform hover:scale-105 animate-slide-up block"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Image */}
@@ -126,12 +135,14 @@ const NewsSection: React.FC = () => {
                   {item.excerpt}
                 </p>
 
-                <button className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 group/btn">
-                  <span className="text-sm font-medium">Читать далее</span>
-                  <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </button>
+                <div className="flex items-center justify-between pt-2 border-t border-gray-700/50">
+                  <span className="text-sm font-medium text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
+                    Читать далее
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
