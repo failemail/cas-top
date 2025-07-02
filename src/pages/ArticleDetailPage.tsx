@@ -8,6 +8,11 @@ import SEOHead from '../components/SEOHead';
 
 const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  
+  if (!slug) {
+    return <Navigate to="/articles" replace />;
+  }
+  
   const article = articles.find(a => a.slug === slug);
 
   if (!article) {

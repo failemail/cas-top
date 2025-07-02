@@ -1,15 +1,55 @@
 User-agent: *
 Allow: /
 
+# Разрешаем основные страницы
+Allow: /articles/
+Allow: /articles/*
+
 # Запрещаем технические страницы
 Disallow: /admin/
 Disallow: /login/
 Disallow: /register/
 Disallow: /checkout/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Разрешаем статические ресурсы
+Allow: /favicon.svg
+Allow: /monro.png
+Allow: /irwin.png
+Allow: /flagman.png
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
 
 # Sitemap
 Sitemap: https://cas-top.ru/sitemap.xml
 
-# Подсказка для Googlebot
+# Специальные инструкции для поисковых ботов
 User-agent: Googlebot
 Disallow: /private/
+Crawl-delay: 1
+
+User-agent: Yandex
+Disallow: /private/
+Crawl-delay: 2
+
+User-agent: Bingbot
+Disallow: /private/
+Crawl-delay: 1
+
+# Запрещаем плохих ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

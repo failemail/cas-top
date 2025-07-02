@@ -1,0 +1,13 @@
+# SPA fallback
+/*    /index.html   200
+
+# Specific redirects for better SEO
+/casino    /#casinos    302
+/bonuses   /#bonuses    302
+/reviews   /#reviews    302
+/news      /#news       302
+/faq       /#faq        302
+
+# Old article URLs redirect
+/article/*  /articles/:splat  301
+/blog/*     /articles/:splat  301
