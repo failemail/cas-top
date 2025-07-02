@@ -1,4 +1,4 @@
-# SPA fallback
+# SPA fallback for React Router
 /*    /index.html   200
 
 # Specific redirects for better SEO
@@ -11,3 +11,6 @@
 # Old article URLs redirect
 /article/*  /articles/:splat  301
 /blog/*     /articles/:splat  301
+
+# Ensure articles work properly
+/articles/*  /index.html  200

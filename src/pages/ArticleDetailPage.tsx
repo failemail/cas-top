@@ -9,12 +9,14 @@ import SEOHead from '../components/SEOHead';
 const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   
+  // Early return if no slug
   if (!slug) {
     return <Navigate to="/articles" replace />;
   }
   
   const article = articles.find(a => a.slug === slug);
 
+  // Early return if article not found
   if (!article) {
     return <Navigate to="/articles" replace />;
   }
@@ -97,6 +99,7 @@ const ArticleDetailPage: React.FC = () => {
                 src={article.image}
                 alt={article.title}
                 className="w-full h-full object-cover"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
               
@@ -168,6 +171,7 @@ const ArticleDetailPage: React.FC = () => {
                         src={relatedArticle.image}
                         alt={relatedArticle.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                     </div>
