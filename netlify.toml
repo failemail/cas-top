@@ -2,11 +2,13 @@
   publish = "dist"
   command = "npm run build"
 
+# SPA routing - this handles all routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
+# Specific redirects for sections
 [[redirects]]
   from = "/casino"
   to = "/#casinos"
@@ -32,6 +34,7 @@
   to = "/#faq"
   status = 302
 
+# Legacy redirects
 [[redirects]]
   from = "/article/*"
   to = "/articles/:splat"
@@ -45,6 +48,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -53,6 +57,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Cache headers for assets
 [[headers]]
   for = "/assets/*"
   [headers.values]

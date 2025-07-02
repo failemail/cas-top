@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, User, ArrowLeft, Tag, TrendingUp, Shield, Zap, Cpu, Smartphone, DollarSign } from 'lucide-react';
 import { articles } from '../data/articles';
 import Header from '../components/Header';
@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead';
 
 const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   
   // Early return if no slug
   if (!slug) {
@@ -20,6 +21,16 @@ const ArticleDetailPage: React.FC = () => {
   if (!article) {
     return <Navigate to="/articles" replace />;
   }
+
+  // Handle browser back/forward navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      // This will be handled by React Router automatically
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
@@ -64,6 +75,15 @@ const ArticleDetailPage: React.FC = () => {
     .filter(a => a.category === article.category && a.id !== article.id)
     .slice(0, 3);
 
+  const handleBackClick = () => {
+    // Use navigate with -1 to go back in history, or fallback to articles page
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/articles');
+    }
+  };
+
   return (
     <>
       <SEOHead
@@ -84,13 +104,13 @@ const ArticleDetailPage: React.FC = () => {
       <div className="min-h-screen bg-slate-900 py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
-          <Link
-            to="/articles"
+          <button
+            onClick={handleBackClick}
             className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 mb-8 animate-slide-up"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span>Назад к статьям</span>
-          </Link>
+            <span>Назад</span>
+          </button>
 
           {/* Article Header */}
           <article className="mb-8">

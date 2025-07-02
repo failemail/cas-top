@@ -19,7 +19,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/articles" element={<ArticlesPage />} />
               <Route path="/articles/:slug" element={<ArticleDetailPage />} />
-              {/* Fallback route for 404 */}
+              {/* Fallback route redirects to home */}
               <Route path="*" element={<HomePage />} />
             </Routes>
           </div>
