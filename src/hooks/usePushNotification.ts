@@ -86,7 +86,7 @@ export const usePushNotification = () => {
     notificationElement.innerHTML = `
       <div class="p-4">
         <div class="flex items-start space-x-3">
-          <img src="/irwin.png" alt="IRWIN" class="w-12 h-12 rounded-lg object-contain bg-white/10 p-1">
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center text-2xl bg-white/10">🎲</div>
           <div class="flex-1">
             <h4 class="font-bold text-lg mb-1">${options.title}</h4>
             <p class="text-sm opacity-90 mb-3">${options.message}</p>

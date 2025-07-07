@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 <div className="absolute inset-0 w-8 h-8 text-cyan-400 animate-pulse"></div>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                ПОРТФОЛИО
+                CASTOP
               </span>
             </Link>
             <p className="text-gray-400 max-w-md">
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-400 text-sm">
-            © {currentYear} ПОРТФОЛИО. Все права защищены.
+            © {currentYear} CASTOP. Все права защищены.
           </p>
           <p className="text-gray-500 text-xs">
             Создано с ❤️ для инновационного сообщества

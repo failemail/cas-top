@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-slide-up">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
-                Портфолио
+                CASTOP
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
@@ -121,12 +121,8 @@ const Hero: React.FC = () => {
               {/* Content */}
               <div className="relative p-8 h-full flex flex-col justify-between">
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-2xl animate-bounce-slow group-hover:animate-spin overflow-hidden">
-                    <img 
-                      src="/monro.png" 
-                      alt="Project logo"
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-4xl animate-bounce-slow group-hover:animate-spin">
+                    🎰
                   </div>
                   <h3 className="text-xl font-bold text-white animate-pulse">Web3 Platform</h3>
                   <p className="text-cyan-400 text-lg font-semibold animate-gradient-x bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Инновационные решения</p>
