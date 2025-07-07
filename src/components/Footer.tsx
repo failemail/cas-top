@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Zap, Github, Twitter, Linkedin } from 'lucide-react';
+import { Send, Zap } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -24,12 +24,6 @@ const Footer: React.FC = () => {
         { label: 'Политика конфиденциальности', href: '#' }
       ]
     }
-  ];
-
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' }
   ];
 
   const handleLinkClick = (href: string) => {
@@ -66,20 +60,6 @@ const Footer: React.FC = () => {
               Создаем инновационные Web3 решения, ИИ платформы и игровые технологии. 
               Экспертные статьи и кейсы для разработчиков и предпринимателей.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              {socialLinks.map((social, index) => (
-                <button
-                  key={index}
-                  onClick={() => window.open(social.href, '_blank')}
-                  className="w-10 h-10 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-lg border border-purple-400/30 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-400/50 transition-all duration-300 hover:scale-110 transform"
-                  title={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </button>
-              ))}
-            </div>
             
             {/* Telegram Support */}
             <button 
