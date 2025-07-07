@@ -8,40 +8,12 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Основные разделы -->
+  <!-- Страница проектов -->
   <url>
-    <loc>https://cas-top.ru/#casinos</loc>
+    <loc>https://cas-top.ru/projects</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/#bonuses</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/#reviews</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/#news</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/#faq</loc>
-    <lastmod>2025-01-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <!-- Страница статей -->
@@ -50,6 +22,42 @@
     <lastmod>2025-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- Проекты -->
+  <url>
+    <loc>https://cas-top.ru/projects/web3-casino-platform</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://cas-top.ru/projects/ton-telegram-casino</loc>
+    <lastmod>2025-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://cas-top.ru/projects/ai-casino-platform</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://cas-top.ru/projects/vr-metaverse-casino</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://cas-top.ru/projects/mobile-crypto-wallet</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <!-- Статьи -->
@@ -68,34 +76,6 @@
   </url>
   
   <url>
-    <loc>https://cas-top.ru/articles/safe-crypto-casino-guide-2025</loc>
-    <lastmod>2025-01-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/articles/nft-casino-gaming-collectibles</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/articles/defi-casino-earning-opportunities</loc>
-    <lastmod>2025-01-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/articles/mobile-web3-casino-apps</loc>
-    <lastmod>2025-01-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
     <loc>https://cas-top.ru/articles/ai-powered-casino-games-2025</loc>
     <lastmod>2025-01-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -110,15 +90,8 @@
   </url>
   
   <url>
-    <loc>https://cas-top.ru/articles/quantum-computing-casino-security</loc>
-    <lastmod>2025-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://cas-top.ru/articles/social-gaming-web3-communities</loc>
-    <lastmod>2025-01-22</lastmod>
+    <loc>https://cas-top.ru/articles/mobile-crypto-wallet-gaming</loc>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

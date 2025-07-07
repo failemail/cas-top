@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Sparkles, TrendingUp, Play } from 'lucide-react';
+import { usePushNotification } from '../hooks/usePushNotification';
 
 const Hero: React.FC = () => {
-  const handlePlayClick = () => {
-    const casinosSection = document.getElementById('casinos');
-    if (casinosSection) {
-      casinosSection.scrollIntoView({ behavior: 'smooth' });
+  const { scheduleNotification } = usePushNotification();
+
+  useEffect(() => {
+    // Schedule IRWIN notification after 20 seconds
+    scheduleNotification({
+      title: '🎰 Эксклюзивный бонус в IRWIN!',
+      message: '150% до 1000 USDT + 100 фриспинов! Играй в лучшем криптоказино с мгновенными выплатами.',
+      icon: '/irwin.png',
+      url: 'http://megaways2.com/c545e526a',
+      delay: 20000 // 20 seconds
+    });
+  }, [scheduleNotification]);
+
+  const handleProjectsClick = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const handleDemoClick = () => {
-    window.open('https://demo.casino-games.com', '_blank', 'noopener,noreferrer');
+    window.open('http://megaways2.com/c9d8bff37', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -37,33 +51,33 @@ const Hero: React.FC = () => {
           <div className="space-y-4">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm animate-fade-in">
               <Sparkles className="w-4 h-4 text-cyan-400 mr-2 animate-pulse" />
-              <span className="text-cyan-400 text-sm font-medium">Web3 Casino Revolution</span>
+              <span className="text-cyan-400 text-sm font-medium">Инновационные проекты</span>
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-slide-up">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-purple-200 bg-clip-text text-transparent">
-                Лучшие онлайн-
+                Портфолио
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
-                казино 2025
+                Web3 проектов
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl animate-slide-up animation-delay-300">
-              Объективные обзоры,
+              Создаем будущее
               <br />
-              <span className="text-cyan-400 animate-pulse">честные бонусы</span>, крипто-оплата
+              <span className="text-cyan-400 animate-pulse">игровых технологий</span> и Web3
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-600">
             <button 
-              onClick={handlePlayClick}
+              onClick={handleProjectsClick}
               className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button flex items-center space-x-2 hover:scale-105 transform"
             >
               <TrendingUp className="w-5 h-5 group-hover:scale-110 transition-transform group-hover:rotate-12" />
-              <span>Выбрать казино</span>
+              <span>Смотреть проекты</span>
             </button>
             
             <button 
@@ -71,19 +85,19 @@ const Hero: React.FC = () => {
               className="group px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 rounded-xl font-medium text-lg hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 flex items-center space-x-2 hover:scale-105 transform"
             >
               <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              <span>Демо режим</span>
+              <span>Демо проект</span>
             </button>
           </div>
 
           {/* Animated Stats */}
           <div className="grid grid-cols-3 gap-6 pt-8 animate-slide-up animation-delay-900">
             <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl md:text-3xl font-bold text-cyan-400 animate-counter" data-target="50">50+</div>
-              <div className="text-sm text-gray-400">Казино</div>
+              <div className="text-2xl md:text-3xl font-bold text-cyan-400 animate-counter" data-target="15">15+</div>
+              <div className="text-sm text-gray-400">Проектов</div>
             </div>
             <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl md:text-3xl font-bold text-purple-400 animate-counter" data-target="1000">1000+</div>
-              <div className="text-sm text-gray-400">Отзывов</div>
+              <div className="text-2xl md:text-3xl font-bold text-purple-400 animate-counter" data-target="50">50+</div>
+              <div className="text-sm text-gray-400">Статей</div>
             </div>
             <div className="text-center group hover:scale-110 transition-transform duration-300">
               <div className="text-2xl md:text-3xl font-bold text-blue-400">24/7</div>
@@ -110,26 +124,26 @@ const Hero: React.FC = () => {
                   <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-2xl animate-bounce-slow group-hover:animate-spin overflow-hidden">
                     <img 
                       src="/monro.png" 
-                      alt="Casino logo"
+                      alt="Project logo"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-white animate-pulse">Web3 Casino</h3>
-                  <p className="text-cyan-400 text-lg font-semibold animate-gradient-x bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">+500% Бонус</p>
+                  <h3 className="text-xl font-bold text-white animate-pulse">Web3 Platform</h3>
+                  <p className="text-cyan-400 text-lg font-semibold animate-gradient-x bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Инновационные решения</p>
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex justify-center space-x-4">
                     <div className="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center text-orange-400 font-bold animate-pulse hover:scale-110 transition-transform cursor-pointer">₿</div>
-                    <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 font-bold animate-pulse animation-delay-300 hover:scale-110 transition-transform cursor-pointer">$</div>
-                    <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold animate-pulse animation-delay-600 hover:scale-110 transition-transform cursor-pointer">T</div>
+                    <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 font-bold animate-pulse animation-delay-300 hover:scale-110 transition-transform cursor-pointer">AI</div>
+                    <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-400 font-bold animate-pulse animation-delay-600 hover:scale-110 transition-transform cursor-pointer">VR</div>
                   </div>
                   
                   <button 
-                    onClick={handlePlayClick}
+                    onClick={handleProjectsClick}
                     className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform"
                   >
-                    Играть сейчас
+                    Смотреть проекты
                   </button>
                 </div>
               </div>

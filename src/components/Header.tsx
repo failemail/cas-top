@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap, BookOpen, Newspaper } from 'lucide-react';
+import { Menu, X, Zap, BookOpen, Briefcase } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { label: 'Казино', href: '/#casinos' },
-    { label: 'Бонусы', href: '/#bonuses' },
-    { label: 'Отзывы', href: '/#reviews' },
-    { label: 'FAQ', href: '/#faq' }
+    { label: 'Проекты', href: '/#projects' },
+    { label: 'Статьи', href: '/articles' },
+    { label: 'О нас', href: '/#about' },
+    { label: 'Контакты', href: '/#contact' }
   ];
 
   const handleNavClick = (href: string) => {
@@ -27,25 +27,25 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const handleNewsClick = () => {
+  const handleProjectsClick = () => {
     if (location.pathname !== '/') {
-      window.location.href = '/#news';
+      window.location.href = '/#projects';
     } else {
-      const newsSection = document.getElementById('news');
-      if (newsSection) {
-        newsSection.scrollIntoView({ behavior: 'smooth' });
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
     setIsMenuOpen(false);
   };
 
-  const handleLoginClick = () => {
+  const handleContactClick = () => {
     if (location.pathname !== '/') {
-      window.location.href = '/#casinos';
+      window.location.href = '/#contact';
     } else {
-      const casinosSection = document.getElementById('casinos');
-      if (casinosSection) {
-        casinosSection.scrollIntoView({ behavior: 'smooth' });
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
@@ -61,31 +61,31 @@ const Header: React.FC = () => {
               <div className="absolute inset-0 w-8 h-8 text-cyan-400 animate-pulse"></div>
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              КАЗИНО
+              ПОРТФОЛИО
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            {/* News Button - Prominent Position */}
+            {/* Projects Button */}
             <button
-              onClick={handleNewsClick}
-              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-full border border-orange-400/30 backdrop-blur-sm text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-105 transform animate-pulse"
+              onClick={handleProjectsClick}
+              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105 transform"
             >
-              <Newspaper className="w-4 h-4" />
-              <span className="font-medium">Новости</span>
+              <Briefcase className="w-4 h-4" />
+              <span className="font-medium">Проекты</span>
             </button>
 
             {/* Articles Button */}
             <Link
               to="/articles"
-              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105 transform"
+              className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-full border border-orange-400/30 backdrop-blur-sm text-orange-400 hover:text-orange-300 transition-all duration-300 hover:scale-105 transform"
             >
               <BookOpen className="w-4 h-4" />
               <span className="font-medium">Статьи</span>
             </Link>
             
-            {navigation.map((item) => (
+            {navigation.slice(2).map((item) => (
               <button
                 key={item.label}
                 onClick={() => handleNavClick(item.href)}
@@ -97,12 +97,12 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Login Button */}
+          {/* Contact Button */}
           <button 
-            onClick={handleLoginClick}
+            onClick={handleContactClick}
             className="hidden md:block px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button"
           >
-            Играть
+            Связаться
           </button>
 
           {/* Mobile Menu Button */}
@@ -118,26 +118,26 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-purple-500/20">
             <div className="flex flex-col space-y-4">
-              {/* Mobile News Button */}
+              {/* Mobile Projects Button */}
               <button
-                onClick={handleNewsClick}
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-lg border border-orange-400/30 backdrop-blur-sm text-orange-400 hover:text-orange-300 transition-all duration-300 w-fit"
+                onClick={handleProjectsClick}
+                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-lg border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 w-fit"
               >
-                <Newspaper className="w-4 h-4" />
-                <span className="font-medium">Новости</span>
+                <Briefcase className="w-4 h-4" />
+                <span className="font-medium">Проекты</span>
               </button>
 
               {/* Mobile Articles Button */}
               <Link
                 to="/articles"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-lg border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 w-fit"
+                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-lg border border-orange-400/30 backdrop-blur-sm text-orange-400 hover:text-orange-300 transition-all duration-300 w-fit"
               >
                 <BookOpen className="w-4 h-4" />
                 <span className="font-medium">Статьи</span>
               </Link>
               
-              {navigation.map((item) => (
+              {navigation.slice(2).map((item) => (
                 <button
                   key={item.label}
                   onClick={() => handleNavClick(item.href)}
@@ -148,10 +148,10 @@ const Header: React.FC = () => {
               ))}
               
               <button 
-                onClick={handleLoginClick}
+                onClick={handleContactClick}
                 className="mt-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button w-fit"
               >
-                Играть
+                Связаться
               </button>
             </div>
           </div>
