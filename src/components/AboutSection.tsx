@@ -126,9 +126,22 @@ const AboutSection: React.FC = () => {
             <p className="text-gray-300 mb-6">
               Следите за нашими проектами и будьте в курсе последних новостей
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform">
-              Подписаться на обновления
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform">
+                Подписаться на обновления
+              </button>
+              <a
+                href="https://topikcas.ru/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-cyan-400/50 text-cyan-400 rounded-xl font-medium hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300 hover:scale-105 transform"
+              >
+                <span>Посетить TopikCas.ru</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>

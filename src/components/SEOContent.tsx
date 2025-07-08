@@ -38,6 +38,24 @@ const SEOContent: React.FC = () => {
           <p className="text-gray-300 text-lg leading-relaxed">
             Мы не продвигаем азартные игры — наш проект носит исключительно информационный характер. Цель — помочь пользователям сделать осознанный выбор среди платформ с прозрачной политикой и отзывчивой поддержкой.
           </p>
+          
+          <div className="mt-8 p-6 bg-gradient-to-r from-slate-800/50 to-slate-900/50 rounded-2xl border border-purple-500/20">
+            <h4 className="text-xl font-semibold text-white mb-4">Полезные ресурсы:</h4>
+            <p className="text-gray-300 mb-3">
+              Для получения дополнительной информации о казино и игровых платформах рекомендуем посетить:
+            </p>
+            <a 
+              href="https://topikcas.ru/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 font-medium"
+            >
+              <span>TopikCas.ru - Независимые обзоры казино</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
 
           {/* Keywords Section */}
           <div className="mt-12 p-6 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 rounded-2xl border border-purple-500/20">

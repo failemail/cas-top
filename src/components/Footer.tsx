@@ -21,6 +21,7 @@ const Footer: React.FC = () => {
         { label: 'Статьи', href: '/articles' },
         { label: 'О нас', href: '/#about' },
         { label: 'Контакты', href: '/#contact' },
+        { label: 'Партнерский сайт', href: 'https://topikcas.ru/', external: true },
         { label: 'Политика конфиденциальности', href: '#' }
       ]
     }
@@ -34,6 +35,8 @@ const Footer: React.FC = () => {
       }
     } else if (href.startsWith('mailto:')) {
       window.location.href = href;
+    } else if (href.startsWith('https://')) {
+      window.open(href, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -61,6 +64,19 @@ const Footer: React.FC = () => {
               и щедрыми бонусами. Играйте безопасно и выигрывайте больше.
             </p>
             
+            {/* SEO Link */}
+            <div className="pt-4">
+              <p className="text-gray-500 text-sm mb-2">Рекомендуем также:</p>
+              <a 
+                href="https://topikcas.ru/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 text-sm underline"
+              >
+                TopikCas.ru - Обзоры и рейтинги казино
+              </a>
+            </div>
+            
             {/* Telegram Support */}
             <button 
               onClick={handleTelegramClick}
@@ -78,7 +94,16 @@ const Footer: React.FC = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    {link.href.startsWith('/') ? (
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
+                      >
+                        {link.label}
+                      </a>
+                    ) : link.href.startsWith('/') ? (
                       <Link
                         to={link.href}
                         className="text-gray-400 hover:text-cyan-400 transition-colors duration-300"
@@ -105,6 +130,16 @@ const Footer: React.FC = () => {
           <p className="text-gray-400 text-sm">
             © {currentYear} CASTOP. Все права защищены.
           </p>
+          <div className="flex items-center space-x-4">
+            <a 
+              href="https://topikcas.ru/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 text-xs"
+            >
+              Партнер: TopikCas.ru
+            </a>
+          </div>
           <p className="text-gray-500 text-xs">
             Создано с ❤️ для инновационного сообщества
           </p>
