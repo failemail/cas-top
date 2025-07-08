@@ -60,14 +60,14 @@ const Hero: React.FC = () => {
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent animate-gradient-x">
-                Web3 проектов
+                Лучшие казино
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl animate-slide-up animation-delay-300">
-              Создаем будущее
+              Проверенные платформы с
               <br />
-              <span className="text-cyan-400 animate-pulse">игровых технологий</span> и Web3
+              <span className="text-cyan-400 animate-pulse">мгновенными выплатами</span> и бонусами
             </p>
           </div>
 
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
               className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium text-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button flex items-center space-x-2 hover:scale-105 transform"
             >
               <TrendingUp className="w-5 h-5 group-hover:scale-110 transition-transform group-hover:rotate-12" />
-              <span>Смотреть проекты</span>
+              <span>Смотреть казино</span>
             </button>
             
             <button 
@@ -92,12 +92,12 @@ const Hero: React.FC = () => {
           {/* Animated Stats */}
           <div className="grid grid-cols-3 gap-6 pt-8 animate-slide-up animation-delay-900">
             <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl md:text-3xl font-bold text-cyan-400 animate-counter" data-target="15">15+</div>
-              <div className="text-sm text-gray-400">Проектов</div>
+              <div className="text-2xl md:text-3xl font-bold text-cyan-400 animate-counter" data-target="3">3</div>
+              <div className="text-sm text-gray-400">Казино</div>
             </div>
             <div className="text-center group hover:scale-110 transition-transform duration-300">
-              <div className="text-2xl md:text-3xl font-bold text-purple-400 animate-counter" data-target="50">50+</div>
-              <div className="text-sm text-gray-400">Статей</div>
+              <div className="text-2xl md:text-3xl font-bold text-purple-400 animate-counter" data-target="1000">1000+</div>
+              <div className="text-sm text-gray-400">USDT бонус</div>
             </div>
             <div className="text-center group hover:scale-110 transition-transform duration-300">
               <div className="text-2xl md:text-3xl font-bold text-blue-400">24/7</div>
@@ -124,8 +124,8 @@ const Hero: React.FC = () => {
                   <div className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center text-4xl animate-bounce-slow group-hover:animate-spin">
                     🎰
                   </div>
-                  <h3 className="text-xl font-bold text-white animate-pulse">Web3 Platform</h3>
-                  <p className="text-cyan-400 text-lg font-semibold animate-gradient-x bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Инновационные решения</p>
+                  <h3 className="text-xl font-bold text-white animate-pulse">Crypto Casino</h3>
+                  <p className="text-cyan-400 text-lg font-semibold animate-gradient-x bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Мгновенные выплаты</p>
                 </div>
                 
                 <div className="space-y-3">
@@ -139,7 +139,7 @@ const Hero: React.FC = () => {
                     onClick={handleProjectsClick}
                     className="w-full py-3 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform"
                   >
-                    Смотреть проекты
+                    Смотреть казино
                   </button>
                 </div>
               </div>

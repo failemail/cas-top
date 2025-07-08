@@ -73,7 +73,7 @@ const Header: React.FC = () => {
               className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 hover:scale-105 transform"
             >
               <Briefcase className="w-4 h-4" />
-              <span className="font-medium">Проекты</span>
+              <span className="font-medium">Казино</span>
             </button>
 
             {/* Articles Button */}
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                 className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-lg border border-purple-400/30 backdrop-blur-sm text-cyan-400 hover:text-cyan-300 transition-all duration-300 w-fit"
               >
                 <Briefcase className="w-4 h-4" />
-                <span className="font-medium">Проекты</span>
+                <span className="font-medium">Казино</span>
               </button>
 
               {/* Mobile Articles Button */}

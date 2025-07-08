@@ -21,11 +21,11 @@ const ProjectsSection: React.FC = () => {
 
   const getCategoryLabel = (category: string) => {
     switch (category) {
-      case 'all': return 'Все проекты';
-      case 'Web3': return 'Web3';
-      case 'Mobile': return 'Мобильные';
-      case 'AI/ML': return 'ИИ/ML';
-      case 'VR/AR': return 'VR/AR';
+      case 'all': return 'Все казино';
+      case 'Web3': return 'Криптоказино';
+      case 'Mobile': return 'Telegram';
+      case 'AI/ML': return 'VIP';
+      case 'VR/AR': return 'Live';
       default: return category;
     }
   };
@@ -46,16 +46,16 @@ const ProjectsSection: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-full border border-purple-400/30 backdrop-blur-sm mb-6">
             <Briefcase className="w-4 h-4 text-cyan-400 mr-2 animate-pulse" />
-            <span className="text-cyan-400 text-sm font-medium">Наши проекты</span>
+            <span className="text-cyan-400 text-sm font-medium">Наши казино</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Портфолио проектов
+              Лучшие казино 2025
             </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Инновационные решения в области Web3, ИИ и игровых технологий
+            Проверенные криптоказино с лучшими бонусами и мгновенными выплатами
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const ProjectsSection: React.FC = () => {
           <div className="mb-16 animate-slide-up animation-delay-300">
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center">
               <span className="mr-3">⭐</span>
-              Рекомендуемые проекты
+              Топ казино
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredProjects.map((project, index) => (
@@ -135,7 +135,7 @@ const ProjectsSection: React.FC = () => {
         {filteredProjects.length === 0 && (
           <div className="text-center py-12 animate-slide-up">
             <div className="text-gray-400 text-lg mb-4">
-              Проекты не найдены
+              Казино не найдены
             </div>
             <p className="text-gray-500">
               Попробуйте изменить фильтры поиска
@@ -147,17 +147,22 @@ const ProjectsSection: React.FC = () => {
         <div className="text-center animate-slide-up animation-delay-1000">
           <div className="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 rounded-2xl border border-purple-400/20 p-8">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Хотите узнать больше?
+              Начните играть прямо сейчас!
             </h3>
             <p className="text-gray-300 mb-6">
-              Читайте подробные статьи о наших проектах и технологиях
+              Выберите казино и получите приветственный бонус до 1000 USDT
             </p>
             <Link
-              to="/articles"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform"
+              to="/projects/irwin-casino"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white rounded-xl font-medium hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 glow-button hover:scale-105 transform mr-4"
             >
-              <BookOpen className="w-5 h-5" />
-              <span>Читать статьи</span>
+              <span>🎲 IRWIN - 150% бонус</span>
+            </Link>
+            <Link
+              to="/projects/flagman-casino"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl font-medium hover:from-orange-700 hover:to-red-700 transition-all duration-300 glow-button hover:scale-105 transform"
+            >
+              <span>🏆 FLAGMAN - 200% бонус</span>
             </Link>
           </div>
         </div>

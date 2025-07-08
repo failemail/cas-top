@@ -7,12 +7,12 @@ const Footer: React.FC = () => {
 
   const footerLinks = [
     {
-      title: 'Проекты',
+      title: 'Казино',
       links: [
-        { label: 'Web3 платформы', href: '/projects?category=Web3' },
-        { label: 'ИИ решения', href: '/projects?category=AI/ML' },
-        { label: 'VR/AR проекты', href: '/projects?category=VR/AR' },
-        { label: 'Мобильные приложения', href: '/projects?category=Mobile' }
+        { label: 'Monro Casino', href: '/projects/monro-casino' },
+        { label: 'IRWIN Casino', href: '/projects/irwin-casino' },
+        { label: 'FLAGMAN Casino', href: '/projects/flagman-casino' },
+        { label: 'Все казино', href: '/projects' }
       ]
     },
     {
@@ -57,8 +57,8 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-gray-400 max-w-md">
-              Создаем инновационные Web3 решения, ИИ платформы и игровые технологии. 
-              Экспертные статьи и кейсы для разработчиков и предпринимателей.
+              Лучшие криптоказино 2025 года с проверенной репутацией, мгновенными выплатами 
+              и щедрыми бонусами. Играйте безопасно и выигрывайте больше.
             </p>
             
             {/* Telegram Support */}
