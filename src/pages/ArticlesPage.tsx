@@ -10,6 +10,7 @@ const ArticlesPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const categories = ['all', 'Технологии', 'Тренды', 'Безопасность', 'Инновации', 'DeFi', 'Мобильные'];
+  const categories = ['all', 'Платежи', 'Финтех', 'Технологии', 'Тренды', 'Безопасность', 'Инновации', 'DeFi', 'Мобильные'];
 
   const filteredArticles = selectedCategory === 'all' 
     ? articles 
@@ -31,6 +32,10 @@ const ArticlesPage: React.FC = () => {
         return <DollarSign className="w-4 h-4" />;
       case 'Мобильные':
         return <Smartphone className="w-4 h-4" />;
+      case 'Платежи':
+        return <DollarSign className="w-4 h-4" />;
+      case 'Финтех':
+        return <TrendingUp className="w-4 h-4" />;
       default:
         return <Tag className="w-4 h-4" />;
     }
@@ -50,6 +55,10 @@ const ArticlesPage: React.FC = () => {
         return 'text-yellow-400 bg-yellow-400/20 border-yellow-400/30';
       case 'Мобильные':
         return 'text-pink-400 bg-pink-400/20 border-pink-400/30';
+      case 'Платежи':
+        return 'text-orange-400 bg-orange-400/20 border-orange-400/30';
+      case 'Финтех':
+        return 'text-emerald-400 bg-emerald-400/20 border-emerald-400/30';
       default:
         return 'text-gray-400 bg-gray-400/20 border-gray-400/30';
     }
@@ -59,8 +68,8 @@ const ArticlesPage: React.FC = () => {
     <>
       <SEOHead
         title="Статьи о Web3 казино 2025 | Экспертные обзоры и аналитика"
-        description="Читайте экспертные статьи о Web3 казино, блокчейн-технологиях в гейминге, DeFi, NFT и криптовалютах. Актуальная аналитика и тренды 2025 года."
-        keywords="Web3 казино статьи, блокчейн гейминг, DeFi казино, NFT игры, криптовалютные казино, TON казино, мобильные Web3 игры"
+        description="Читайте экспертные статьи о криптоказино, платежных системах в РФ, Web3 технологиях и блокчейн-гейминге. Актуальная аналитика и тренды 2025 года."
+        keywords="криптоказино статьи, платежи РФ, QIWI казино, ЮMoney, СБП, блокчейн гейминг, DeFi казино, криптовалютные казино"
         url="https://cas-top.ru"
       />
       

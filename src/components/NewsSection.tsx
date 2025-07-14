@@ -17,6 +17,26 @@ const NewsSection: React.FC = () => {
   const news: NewsItem[] = [
     {
       id: '1',
+      title: 'Платежи в РФ для криптоказино: обзор методов 2025',
+      excerpt: 'Актуальные способы пополнения и вывода средств в российских криптоказино. Банковские карты, электронные кошельки и криптовалюты.',
+      date: '20 января 2025',
+      category: 'Платежи',
+      readTime: '9 мин',
+      image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg',
+      slug: 'platezhi-rf-crypto-casino-2025'
+    },
+    {
+      id: '2',
+      title: 'СБП и криптоплатежи: новые возможности для игроков',
+      excerpt: 'Как Система быстрых платежей меняет ландшафт онлайн-платежей в России и какие альтернативы доступны для криптоказино.',
+      date: '19 января 2025',
+      category: 'Финтех',
+      readTime: '7 мин',
+      image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg',
+      slug: 'sbp-crypto-payments-russia'
+    },
+    {
+      id: '3',
       title: 'ИИ в казино: персонализация игрового опыта',
       excerpt: 'Искусственный интеллект революционизирует онлайн-казино, создавая уникальный опыт для каждого игрока.',
       date: '18 января 2025',
@@ -24,26 +44,6 @@ const NewsSection: React.FC = () => {
       readTime: '7 мин',
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg',
       slug: 'ai-powered-casino-games-2025'
-    },
-    {
-      id: '2',
-      title: 'Казино в метавселенной: будущее уже здесь',
-      excerpt: 'Виртуальная реальность открывает новые горизонты для онлайн-казино. Погружение в цифровые миры игр.',
-      date: '16 января 2025',
-      category: 'Инновации',
-      readTime: '8 мин',
-      image: 'https://images.pexels.com/photos/8728382/pexels-photo-8728382.jpeg',
-      slug: 'metaverse-casino-virtual-reality'
-    },
-    {
-      id: '3',
-      title: 'Web3 казино: революция в онлайн-гейминге',
-      excerpt: 'Блокчейн-технологии меняют индустрию азартных игр, предлагая прозрачность и децентрализацию.',
-      date: '15 января 2025',
-      category: 'Тренды',
-      readTime: '8 мин',
-      image: 'https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg',
-      slug: 'web3-casino-revolution'
     }
   ];
 
