@@ -9,7 +9,6 @@ import SEOHead from '../components/SEOHead';
 const ArticlesPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const categories = ['all', 'Технологии', 'Тренды', 'Безопасность', 'Инновации', 'DeFi', 'Мобильные'];
   const categories = ['all', 'Платежи', 'Финтех', 'Технологии', 'Тренды', 'Безопасность', 'Инновации', 'DeFi', 'Мобильные'];
 
   const filteredArticles = selectedCategory === 'all' 
@@ -82,10 +81,10 @@ const ArticlesPage: React.FC = () => {
             <div>
               <h1 className="text-3xl md:text-4xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Статьи о Web3 казино
+                  Статьи о криптоказино
                 </span>
               </h1>
-              <p className="text-gray-300">Экспертные материалы о будущем онлайн-гейминга</p>
+              <p className="text-gray-300">Экспертные материалы о криптоказино и платежных системах</p>
             </div>
             
             <Link
